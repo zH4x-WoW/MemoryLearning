@@ -16,12 +16,23 @@ namespace MainDLL
 		
 		auto baseAddress = GetModuleHandleW(NULL);
 		printf("Base Address is: 0x%llX\n", baseAddress);
-		auto health = *(int*)(baseAddress + 0x223F0);
-		printf("Health Read: %i\n", health);		
 
 		//F4 to unload dll 
 		while (1 & !GetAsyncKeyState(VK_F4))
 		{	
+			if (GetAsyncKeyState(VK_F5))
+			{
+				auto health = *(int*)((uintptr_t)baseAddress + 0x223F0);
+				printf("Health Read: %i\n", health);
+			}
+
+			if (GetAsyncKeyState(VK_F6))
+			{
+				*(int*)((uintptr_t)baseAddress + 0x223F0) += 10;
+				auto health = *(int*)((uintptr_t)baseAddress + 0x223F0);
+				printf("Health Read: %i\n", health);
+			}
+
 			Sleep(1);
 		}
 

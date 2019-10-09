@@ -37,7 +37,7 @@ BOOL Inject(DWORD pID, const char * DLL_NAME)
 	}
 
 	WaitForSingleObject(thread, INFINITE);
-	printf("Dll has been injected.\n");
+	printf("Dll has been injected it has thread handle: %i\n", thread);
 
 	CreateRemoteThread(process_handle, NULL, NULL, (LPTHREAD_START_ROUTINE)loadlibrary_address, (LPVOID)external_memory, NULL, NULL);
 
@@ -74,15 +74,8 @@ int main(int argc, char * argv[])
 	printf("DLL Path: %s\n", buf);
 
 	// Inject our main dll 
-	if (!Inject(pid, buf))
-	{
-		printf("Failed to inject Dll.\n");
-	}
-	else 
-	{
-		printf("Dll has been injected.\n");
-	}
-
+	Inject(pid, buf);
+	
 	_getch();
 	return 0;
 }
