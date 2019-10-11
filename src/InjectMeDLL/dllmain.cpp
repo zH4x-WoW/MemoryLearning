@@ -15,7 +15,7 @@ namespace MainDLL
 		printf("Hello from internal\n");
 		
 		auto baseAddress = GetModuleHandleW(NULL);
-		printf("Base Address is: 0x%llX\n", baseAddress);
+		printf("Base Address is: 0x%llX\n", (uintptr_t)baseAddress);
 
 		//F4 to unload dll 
 		while (1 & !GetAsyncKeyState(VK_F4))
