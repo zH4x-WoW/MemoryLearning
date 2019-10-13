@@ -4,13 +4,15 @@
 
 int health = 0;
 
-void OnUpdate()
+int32_t OnUpdate(float a1)
 {	
-	health++;
+	health = health + 1;
 	printf("[OnUpdate] health = %i\n", health);
 
 	if (health > 800000000)
 		health = 0;
+
+	return 1;
 }
 
 void Pulse()
@@ -19,7 +21,7 @@ void Pulse()
 	while (1)
 	{
 		Sleep(1000);
-		OnUpdate();
+		OnUpdate(1.0f);
 	}
 }
 

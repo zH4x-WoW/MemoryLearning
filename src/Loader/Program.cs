@@ -13,7 +13,7 @@ namespace Loader
             Process process = Process.Start(processStartInfo);
             Thread.Sleep(500);
 
-            using (var injector = new Injector("Wow", @"D:\Coding\Memory Learning\src\x64\Debug\InjectMeDLL.dll", InjectionMethod.CreateThread, InjectionFlags.HideDllFromPeb | InjectionFlags.RandomiseDllHeaders | InjectionFlags.RandomiseDllName))
+            using (var injector = new Injector("Wow", @"D:\Coding\Memory Learning\src\x64\Debug\InjectMeDLL.dll", InjectionMethod.CreateThread, InjectionFlags.None))
             {
                 // Inject the DLL into the remote process
                 var dllBaseAddress = injector.InjectDll();
