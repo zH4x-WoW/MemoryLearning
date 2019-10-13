@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<CheatTable CheatEngineTableVersion="29">
+<CheatTable PornoAvenueTableVersion="29">
   <CheatEntries>
     <CheatEntry>
       <ID>0</ID>
-      <Description>"Health"</Description>
-      <LastState Value="52" RealAddress="7FF6DD7A23F0"/>
+      <Description>"No description"</Description>
       <VariableType>4 Bytes</VariableType>
-      <Address>Wow.exe+223F0</Address>
+      <Address>Wow.exe+1F340</Address>
     </CheatEntry>
   </CheatEntries>
   <UserdefinedSymbols/>
